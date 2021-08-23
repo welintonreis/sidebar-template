@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,7 +17,7 @@
       <div class="logo_content">
         <div class="logo">
           <!-- <i class="bx bx-code-curly"></i> -->
-          <img src="../../assets/logo.png" class="logo_img" />
+          <img src="../../assets/logo.png" class="logo_img" id="husky_logo" />
           <div class="logo_name">Husky Code</div>
         </div>
         <i class="bx bx-menu" id="btn"></i>
@@ -84,6 +84,13 @@
           </a>
           <span class="tooltip">Settings</span>
         </li>
+        <li>
+          <a href#>
+            <i class="bx bx-moon" id="switch"></i>
+            <span class="link_name" id="switch-text">Dark Mode</span>
+          </a>
+          <span class="tooltip">Dark Mode</span>
+        </li>
       </ul>
       <div class="profile_content">
         <div class="profile">
@@ -103,20 +110,46 @@
       </div>
     </div>
     <div class="home_content">
-      <div class="text">Home Content</div>
+      <div class="text" id="root">Home Content</div>
     </div>
 
     <script>
       let btn = document.querySelector("#btn");
       let sidebar = document.querySelector(".sidebar");
       let searchBtn = document.querySelector(".bx-search-alt");
-
+      let darkMode = document.querySelector(".bx-moon");
       btn.onclick = function () {
         sidebar.classList.toggle("active");
       };
       searchBtn.onclick = function () {
         sidebar.classList.toggle("active");
       };
+      const $html = document.querySelector("html");
+      const $switch = document.querySelector("#switch");
+      const $switchText = document.querySelector("#switch-text");
+      let logo_change = 1;
+
+      $switch.addEventListener("click", function () {
+        $html.classList.toggle("dark-mode");
+        if (logo_change === -1) {
+          document.getElementById("husky_logo").src =
+            "../../assets/logo_dark.png";
+        } else {
+          document.getElementById("husky_logo").src = "../../assets/logo.png";
+        }
+        logo_change = logo_change * -1;
+      });
+
+      $switchText.addEventListener("click", function () {
+        $html.classList.toggle("dark-mode");
+        if (logo_change === -1) {
+          document.getElementById("husky_logo").src =
+            "../../assets/logo_dark.png";
+        } else {
+          document.getElementById("husky_logo").src = "../../assets/logo.png";
+        }
+        logo_change = logo_change * -1;
+      });
     </script>
   </body>
 </html>
