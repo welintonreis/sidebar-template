@@ -113,17 +113,16 @@ body {
   height: 35px;
   width: 122px;
   left: 78px;
-  background: #fff;
+  background: var(--lin-hover-bg);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-50%, -50%);
   border-radius: 6px;
   line-height: 35px;
   text-align: center;
   transition: 0s;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   display: block;
-  transition: all 0.2s ease;
 }
 
 .sidebar.active ul li .tooltip {
@@ -156,6 +155,7 @@ body {
   color: var(--body-content);
   font-size: 22px;
   transition: all 0.2s ease;
+  pointer-events: auto;
 }
 
 .sidebar ul li .bx-search-alt:hover {
